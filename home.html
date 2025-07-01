@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>webdeveloper</title>
+    <style>
+      .container {
+        width: 100vw;
+        height: auto;
+        display: flex;
+        justify-content: center;
+      }
+      nav {
+        display: flex;
+        justify-content: center;
+      }
+      nav {
+        width: 95vw;
+        height: 40px;
+        border: 1px solid rgba(68, 66, 66, 0.308);
+
+        padding: 20px 10px;
+        background-color: rgb(225, 231, 235);
+      }
+      .nav-links {
+        display: inline-flex;
+        justify-content: space-between;
+        flex: 1;
+        text-align: right;
+      }
+      .nav-links ul li {
+        display: inline-block;
+        justify-content: right;
+        text-align: right;
+        list-style: none;
+        padding: 0 10px 0 80px;
+        line-height: -40px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        font-style: italic;
+        font: caption;
+      }
+      .headers {
+        display: flex;
+        justify-content: left;
+        text-align: left;
+        position: relative;
+      }
+      .headers p {
+        position: absolute;
+        left: 180px;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: burlywood;
+      }
+      nav ul li::after {
+        content: "";
+        background-color: rgb(190, 117, 7);
+        z-index: 2;
+        width: 0%;
+        height: 2px;
+        display: block;
+        margin: auto;
+
+        transition: 0.5s;
+      }
+      nav ul li:hover::after {
+        width: 100%;
+      }
+      nav p {
+        margin-left: 100px;
+        margin-right: 100px;
+      }
+      li .contact {
+        padding: 5px 5px 10px 10px;
+        width: 100px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        background-color: rgba(197, 69, 69, 0.658);
+      }
+      nav p {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 20px;
+        font-weight: bolder;
+        color: rgba(194, 32, 32, 0.26);
+      }
+      .paras {
+        height: auto;
+      }
+      .paragraph {
+        display: flex;
+        justify-content: center;
+        width: 500px;
+        align-items: center;
+        text-align: center;
+        height: 100%;
+        font-size: 30px;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .para {
+        width: 100vw;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
+      .image {
+        width: 100vw;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+      }
+      .images {
+        width: 750px;
+        height: 550px;
+      }
+      .img {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+      .imgr {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        border: 1px solid rgba(68, 66, 66, 0.308);
+      }
+      .con {
+        width: 100vw;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
+      .contents {
+        width: 750px;
+        height: auto;
+      }
+      .content {
+        width: 100%;
+        font-size: 28px;
+      }
+      .content p {
+        color: rgb(78, 73, 73);
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-weight: lighter;
+      }
+      .content h2 {
+        color: rgb(82, 68, 68);
+        font-size: 20px;
+      }
+      .content strong {
+        color: rgb(233, 138, 14);
+        font-weight: bolder;
+      }
+      .waters {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+      }
+      .water h2 {
+        font-size: 25px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .water p {
+        font-size: 18px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: rgb(141, 128, 74);
+      }
+      .mains {
+        width: 80vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: blanchedalmond;
+        overflow: hidden;
+        transform: translate(100px);
+        margin-top: 50px;
+        border: 1px solid rgba(107, 97, 97, 0.466);
+      }
+      .cards {
+        width: 1500px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        overflow: hidden;
+        position: relative;
+      }
+      .img-holder {
+        position: absolute;
+        left: 0;
+        width: 30%;
+        border: 1px solid rgb(124, 118, 118);
+        font-size: 18px;
+        font-weight: bolder;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        line-height: 50px;
+        background-color: sandybrown;
+        height: 721px;
+        transition: 0.5s;
+      }
+      .architecture {
+        position: relative;
+
+        display: flex;
+      }
+      .architecture h2 {
+        position: absolute;
+        left: 550px;
+        top: 50px;
+      }
+      .architecture p {
+        position: absolute;
+        left: 550px;
+        top: 150px;
+        width: 650px;
+        text-transform: capitalize;
+        font-size: 20px;
+      }
+      .architecture img {
+        width: 550px;
+        height: 350px;
+        border: 1px solid rgb(78, 73, 73);
+        position: absolute;
+        left: 550px;
+        top: 250px;
+        border-radius: 10px;
+      }
+      .architecture span {
+        width: 450px;
+      }
+      .img-holder ul li {
+        display: block;
+        list-style: none;
+      }
+      .img-holder ul li a:hover {
+        background-color: rgb(94, 221, 21);
+        width: 87%;
+        height: 100%;
+      }
+      .img-holder ul li a {
+        text-decoration: none;
+        border: 1px solid white;
+        background: none;
+        color: black;
+        display: block;
+        padding: 10px 20px 10px 40px;
+        background: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contatier">
+      <div class="header">
+        <nav>
+          <p>THE RETREAT</p>
+
+          <div class="nav-links">
+            <ul>
+              <li><a href="">HOME</a></li>
+              <li><a href="">ABOUT US</a></li>
+              <li><a href="">Explore Retreat</a></li>
+              <li><a href="">BLOGS</a></li>
+
+              <li><a href="" class="contact">CONTACT</a></li>
+            </ul>
+          </div>
+        </nav>
+        <div class="para">
+          <div class="paras">
+            <div class="paragraph">
+              <p>
+                where world-class engineering meets timeless design to create
+                homes that stand for generations
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="image">
+          <div class="images">
+            <div class="img">
+              <img src="" class="imgr" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="con">
+          <div class="contents">
+            <div class="content">
+              <h2>DESIGN FOR LIFE</h2>
+              <p>
+                <strong>"</strong> our guiding principle was that design is
+                neither an intellectual nor a material affair,but simply an
+                integral part of the stuff of life, necessary for everyone in a
+                civilized society <strong>"</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="waters">
+        <div class="wat">
+          <div class="water">
+            <h2>walter groups</h2>
+            <p>architect and founder of the bauhaus</p>
+          </div>
+        </div>
+      </div>
+      <div class="mains">
+        <div class="cards">
+          <div class="img-holder">
+            <h2>what we offer</h2>
+            <ul>
+              <li><a href="" class="archi 1">Architecture Rooted in Time</a></li>
+              <li><a href="/natural.html">Natural Flow & Light</a></li>
+              <li><a href="">Materials that carry Legacy</a></li>
+
+              <li><a href="">Crafted for Generations</a></li>
+            </ul>
+          </div>
+
+          <div class="architecture">
+            <h2>Architecture Rooted in Time</h2>
+            <p>
+              timeless in every sense <span>-</span> our reflects a classic
+              asesthetic, blending natural tones and enduring design
+              principles.paired with thoughtful tecnology,it ensures alifestyle
+              that never feels outdated.
+            </p>
+            <img src="" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
